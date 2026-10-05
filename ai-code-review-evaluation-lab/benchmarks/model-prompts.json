@@ -1,0 +1,178 @@
+[
+  {
+    "case_id": "PY-01",
+    "language": "python",
+    "title": "Two-sum distinct indices",
+    "task": "Return indices of two distinct elements whose values sum to target, or None if no solution exists.",
+    "code": "def two_sum(nums, target):\n    for i in range(len(nums)):\n        for j in range(len(nums)):\n            if nums[i] + nums[j] == target:\n                return [i, j]\n    return None",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"PY-01\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Return indices of two distinct elements whose values sum to target, or None if no solution exists.\n\nCODE:\ndef two_sum(nums, target):\n    for i in range(len(nums)):\n        for j in range(len(nums)):\n            if nums[i] + nums[j] == target:\n                return [i, j]\n    return None"
+  },
+  {
+    "case_id": "PY-02",
+    "language": "python",
+    "title": "Binary search upper bound",
+    "task": "Return index of target in sorted list or -1 if absent.",
+    "code": "def search(a, target):\n    left, right = 0, len(a)\n    while left <= right:\n        mid = (left + right) // 2\n        if a[mid] == target:\n            return mid\n        if a[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"PY-02\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Return index of target in sorted list or -1 if absent.\n\nCODE:\ndef search(a, target):\n    left, right = 0, len(a)\n    while left <= right:\n        mid = (left + right) // 2\n        if a[mid] == target:\n            return mid\n        if a[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1"
+  },
+  {
+    "case_id": "PY-03",
+    "language": "python",
+    "title": "Palindrome normalization",
+    "task": "Case-insensitive palindrome check ignoring non-alphanumeric characters; empty normalized input is True.",
+    "code": "def is_palindrome(s):\n    s = s.lower()\n    return s == s[::-1]",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"PY-03\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Case-insensitive palindrome check ignoring non-alphanumeric characters; empty normalized input is True.\n\nCODE:\ndef is_palindrome(s):\n    s = s.lower()\n    return s == s[::-1]"
+  },
+  {
+    "case_id": "PY-04",
+    "language": "python",
+    "title": "Mutable default argument",
+    "task": "Append an item to a list and return the list, using a fresh list for each call unless supplied.",
+    "code": "def add_item(item, items=[]):\n    items.append(item)\n    return items",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"PY-04\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Append an item to a list and return the list, using a fresh list for each call unless supplied.\n\nCODE:\ndef add_item(item, items=[]):\n    items.append(item)\n    return items"
+  },
+  {
+    "case_id": "PY-05",
+    "language": "python",
+    "title": "Empty input contract",
+    "task": "Return the average of values; raise ValueError for empty input.",
+    "code": "def average(values):\n    return sum(values) / len(values)",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"PY-05\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Return the average of values; raise ValueError for empty input.\n\nCODE:\ndef average(values):\n    return sum(values) / len(values)"
+  },
+  {
+    "case_id": "PY-06",
+    "language": "python",
+    "title": "Sortedness precondition",
+    "task": "Return whether list contains target using binary search; caller promises sorted input.",
+    "code": "def contains(values, target):\n    left, right = 0, len(values)-1\n    while left <= right:\n        mid=(left+right)//2\n        if values[mid] == target: return True\n        if values[mid] < target: left=mid+1\n        else: right=mid-1\n    return False",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"PY-06\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Return whether list contains target using binary search; caller promises sorted input.\n\nCODE:\ndef contains(values, target):\n    left, right = 0, len(values)-1\n    while left <= right:\n        mid=(left+right)//2\n        if values[mid] == target: return True\n        if values[mid] < target: left=mid+1\n        else: right=mid-1\n    return False"
+  },
+  {
+    "case_id": "PY-07",
+    "language": "python",
+    "title": "Broad exception handling",
+    "task": "Parse an integer and return None only for invalid integer text.",
+    "code": "def parse_int(text):\n    try:\n        return int(text)\n    except Exception:\n        return None",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"PY-07\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Parse an integer and return None only for invalid integer text.\n\nCODE:\ndef parse_int(text):\n    try:\n        return int(text)\n    except Exception:\n        return None"
+  },
+  {
+    "case_id": "PY-08",
+    "language": "python",
+    "title": "Duplicate detection complexity",
+    "task": "Return True if any duplicate exists.",
+    "code": "def has_duplicate(values):\n    for i, value in enumerate(values):\n        if value in values[i+1:]:\n            return True\n    return False",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"PY-08\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Return True if any duplicate exists.\n\nCODE:\ndef has_duplicate(values):\n    for i, value in enumerate(values):\n        if value in values[i+1:]:\n            return True\n    return False"
+  },
+  {
+    "case_id": "PY-09",
+    "language": "python",
+    "title": "Two-sum missing return contract",
+    "task": "Return a pair of indices or raise ValueError when no pair exists.",
+    "code": "def two_sum(nums, target):\n    seen = {}\n    for i, n in enumerate(nums):\n        if target-n in seen:\n            return [seen[target-n], i]\n        seen[n] = i",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"PY-09\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Return a pair of indices or raise ValueError when no pair exists.\n\nCODE:\ndef two_sum(nums, target):\n    seen = {}\n    for i, n in enumerate(nums):\n        if target-n in seen:\n            return [seen[target-n], i]\n        seen[n] = i"
+  },
+  {
+    "case_id": "PY-10",
+    "language": "python",
+    "title": "String reversal complexity",
+    "task": "Reverse a string and explain Unicode behavior.",
+    "code": "def reverse_text(s):\n    out = ''\n    for ch in s:\n        out = ch + out\n    return out",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"PY-10\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Reverse a string and explain Unicode behavior.\n\nCODE:\ndef reverse_text(s):\n    out = ''\n    for ch in s:\n        out = ch + out\n    return out"
+  },
+  {
+    "case_id": "JS-01",
+    "language": "javascript",
+    "title": "Async error handling",
+    "task": "Fetch JSON from a URL and return null if the request fails.",
+    "code": "async function load(url) {\n  fetch(url).then(r => r.json()).catch(() => null);\n}",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"JS-01\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Fetch JSON from a URL and return null if the request fails.\n\nCODE:\nasync function load(url) {\n  fetch(url).then(r => r.json()).catch(() => null);\n}"
+  },
+  {
+    "case_id": "JS-02",
+    "language": "javascript",
+    "title": "Array mutation",
+    "task": "Return a sorted copy of the input array without modifying the caller's array.",
+    "code": "function sortedCopy(values) {\n  return values.sort((a,b) => a-b);\n}",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"JS-02\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Return a sorted copy of the input array without modifying the caller's array.\n\nCODE:\nfunction sortedCopy(values) {\n  return values.sort((a,b) => a-b);\n}"
+  },
+  {
+    "case_id": "JS-03",
+    "language": "javascript",
+    "title": "Unicode string reversal",
+    "task": "Reverse by Unicode code point, preserving surrogate pairs.",
+    "code": "function reverse(s) {\n  return s.split('').reverse().join('');\n}",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"JS-03\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Reverse by Unicode code point, preserving surrogate pairs.\n\nCODE:\nfunction reverse(s) {\n  return s.split('').reverse().join('');\n}"
+  },
+  {
+    "case_id": "JS-04",
+    "language": "javascript",
+    "title": "Unique values complexity",
+    "task": "Return unique primitive values in first-seen order.",
+    "code": "function unique(values) {\n  return values.filter((v, i) => values.indexOf(v) === i);\n}",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"JS-04\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Return unique primitive values in first-seen order.\n\nCODE:\nfunction unique(values) {\n  return values.filter((v, i) => values.indexOf(v) === i);\n}"
+  },
+  {
+    "case_id": "JS-05",
+    "language": "javascript",
+    "title": "Loose equality",
+    "task": "Return true only when numeric value is exactly 0.",
+    "code": "function isZero(value) {\n  return value == 0;\n}",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"JS-05\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Return true only when numeric value is exactly 0.\n\nCODE:\nfunction isZero(value) {\n  return value == 0;\n}"
+  },
+  {
+    "case_id": "JS-06",
+    "language": "javascript",
+    "title": "Missing rejection propagation",
+    "task": "Resolve with the user's profile, allowing failures to propagate to caller.",
+    "code": "function getProfile(id) {\n  return fetchProfile(id).catch(err => {\n    console.error(err);\n  });\n}",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"JS-06\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Resolve with the user's profile, allowing failures to propagate to caller.\n\nCODE:\nfunction getProfile(id) {\n  return fetchProfile(id).catch(err => {\n    console.error(err);\n  });\n}"
+  },
+  {
+    "case_id": "CPP-01",
+    "language": "cpp",
+    "title": "Binary search boundary",
+    "task": "Return index of target in sorted vector or -1.",
+    "code": "int search(const std::vector<int>& a, int target) {\n  int left = 0, right = static_cast<int>(a.size());\n  while (left <= right) {\n    int mid = (left + right) / 2;\n    if (a[mid] == target) return mid;\n    if (a[mid] < target) left = mid + 1; else right = mid - 1;\n  }\n  return -1;\n}",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"CPP-01\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Return index of target in sorted vector or -1.\n\nCODE:\nint search(const std::vector<int>& a, int target) {\n  int left = 0, right = static_cast<int>(a.size());\n  while (left <= right) {\n    int mid = (left + right) / 2;\n    if (a[mid] == target) return mid;\n    if (a[mid] < target) left = mid + 1; else right = mid - 1;\n  }\n  return -1;\n}"
+  },
+  {
+    "case_id": "CPP-02",
+    "language": "cpp",
+    "title": "Signed integer overflow",
+    "task": "Return absolute difference between two signed ints as a signed int.",
+    "code": "int absDiff(int a, int b) {\n  return std::abs(a - b);\n}",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"CPP-02\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Return absolute difference between two signed ints as a signed int.\n\nCODE:\nint absDiff(int a, int b) {\n  return std::abs(a - b);\n}"
+  },
+  {
+    "case_id": "CPP-03",
+    "language": "cpp",
+    "title": "Resource ownership",
+    "task": "Read a file safely and release resources on every path.",
+    "code": "std::string readFirstLine(const std::string& path) {\n  FILE* f = std::fopen(path.c_str(), \"r\");\n  if (!f) throw std::runtime_error(\"open failed\");\n  char buffer[256];\n  if (!std::fgets(buffer, sizeof buffer, f)) throw std::runtime_error(\"read failed\");\n  std::fclose(f);\n  return buffer;\n}",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"CPP-03\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Read a file safely and release resources on every path.\n\nCODE:\nstd::string readFirstLine(const std::string& path) {\n  FILE* f = std::fopen(path.c_str(), \"r\");\n  if (!f) throw std::runtime_error(\"open failed\");\n  char buffer[256];\n  if (!std::fgets(buffer, sizeof buffer, f)) throw std::runtime_error(\"read failed\");\n  std::fclose(f);\n  return buffer;\n}"
+  },
+  {
+    "case_id": "CPP-04",
+    "language": "cpp",
+    "title": "Const correctness",
+    "task": "Compute the sum of a vector without modifying it.",
+    "code": "int sum(std::vector<int>& values) {\n  int result = 0;\n  for (int value : values) result += value;\n  return result;\n}",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"CPP-04\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Compute the sum of a vector without modifying it.\n\nCODE:\nint sum(std::vector<int>& values) {\n  int result = 0;\n  for (int value : values) result += value;\n  return result;\n}"
+  },
+  {
+    "case_id": "CPP-05",
+    "language": "cpp",
+    "title": "Duplicate removal sortedness",
+    "task": "Remove duplicates from an arbitrary-order vector while preserving first occurrence.",
+    "code": "void dedupe(std::vector<int>& values) {\n  values.erase(std::unique(values.begin(), values.end()), values.end());\n}",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"CPP-05\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Remove duplicates from an arbitrary-order vector while preserving first occurrence.\n\nCODE:\nvoid dedupe(std::vector<int>& values) {\n  values.erase(std::unique(values.begin(), values.end()), values.end());\n}"
+  },
+  {
+    "case_id": "CPP-06",
+    "language": "cpp",
+    "title": "Signed/unsigned loop",
+    "task": "Print vector elements by index safely, including for empty vectors.",
+    "code": "for (int i = 0; i < values.size() - 1; ++i) {\n  std::cout << values[i] << '\\n';\n}",
+    "user_prompt": "Review the following code against the stated task contract. Return valid JSON only with shape {\"case_id\":\"CPP-06\",\"findings\":[{\"tag\":\"short_snake_case\",\"severity\":\"critical|high|medium|low|info\",\"evidence\":\"specific code evidence\",\"impact\":\"concrete consequence\",\"fix\":\"actionable correction\"}]}. Only report actionable findings; do not invent issues that contradict the task contract. If no issue, return an empty findings array.\n\nTASK: Print vector elements by index safely, including for empty vectors.\n\nCODE:\nfor (int i = 0; i < values.size() - 1; ++i) {\n  std::cout << values[i] << '\\n';\n}"
+  }
+]

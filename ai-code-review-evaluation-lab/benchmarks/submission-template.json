@@ -1,0 +1,97 @@
+[
+  {
+    "model_name": "REPLACE_WITH_PROVIDER_MODEL_AND_VERSION",
+    "run_date_utc": "YYYY-MM-DD",
+    "notes": "Record exact prompt, model version, temperature, max output tokens, and any tool use.",
+    "cases": [
+      {
+        "case_id": "PY-01",
+        "findings": []
+      },
+      {
+        "case_id": "PY-02",
+        "findings": []
+      },
+      {
+        "case_id": "PY-03",
+        "findings": []
+      },
+      {
+        "case_id": "PY-04",
+        "findings": []
+      },
+      {
+        "case_id": "PY-05",
+        "findings": []
+      },
+      {
+        "case_id": "PY-06",
+        "findings": []
+      },
+      {
+        "case_id": "PY-07",
+        "findings": []
+      },
+      {
+        "case_id": "PY-08",
+        "findings": []
+      },
+      {
+        "case_id": "PY-09",
+        "findings": []
+      },
+      {
+        "case_id": "PY-10",
+        "findings": []
+      },
+      {
+        "case_id": "JS-01",
+        "findings": []
+      },
+      {
+        "case_id": "JS-02",
+        "findings": []
+      },
+      {
+        "case_id": "JS-03",
+        "findings": []
+      },
+      {
+        "case_id": "JS-04",
+        "findings": []
+      },
+      {
+        "case_id": "JS-05",
+        "findings": []
+      },
+      {
+        "case_id": "JS-06",
+        "findings": []
+      },
+      {
+        "case_id": "CPP-01",
+        "findings": []
+      },
+      {
+        "case_id": "CPP-02",
+        "findings": []
+      },
+      {
+        "case_id": "CPP-03",
+        "findings": []
+      },
+      {
+        "case_id": "CPP-04",
+        "findings": []
+      },
+      {
+        "case_id": "CPP-05",
+        "findings": []
+      },
+      {
+        "case_id": "CPP-06",
+        "findings": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,145 @@
+{
+  "report_type": "local_reproducible_checks",
+  "generated_at_utc": "2026-10-05T07:54:17.098609+00:00",
+  "project": "AI Code Review & Evaluation Lab",
+  "note": "These are local software checks on authored reference examples. They are not results from external AI models and do not establish model rankings.",
+  "passed": 10,
+  "total": 10,
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "Python unit tests",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "return_code": 0,
+      "passed": true,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "Benchmark evaluator unit tests",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "test_benchmark_evaluator",
+        "-v"
+      ],
+      "return_code": 0,
+      "passed": true,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "Python reference cases",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "benchmarks/run_reference_tests.py"
+      ],
+      "return_code": 0,
+      "passed": true,
+      "stdout": "PASS: palindrome basic\nPASS: palindrome punctuation\nPASS: palindrome empty normalized\nPASS: palindrome negative\nPASS: two sum basic\nPASS: two sum duplicates\nPASS: two sum negatives\nPASS: two sum no solution raises\nPASS: binary search hit\nPASS: binary search miss\nPASS: binary search empty\nPASS: binary search single hit\nPASS: binary search single miss\n\nResult: 13/13 passed",
+      "stderr": ""
+    },
+    {
+      "name": "Python candidate defect demonstrations",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "test_candidate_behaviors.py"
+      ],
+      "return_code": 0,
+      "passed": true,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "JavaScript behavior tests",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "-e",
+        "\nconst assert = require('node:assert/strict');\nconst {\n  reverseStringCandidate, reverseStringCorrected,\n  uniqueValuesCandidate, uniqueValuesCorrected\n} = require('./benchmarks/javascript_candidates.js');\n\nassert.equal(reverseStringCandidate('level'), 'level');\nassert.equal(reverseStringCorrected('level'), 'level');\nassert.notEqual(reverseStringCandidate('A\ud83d\ude00B'), 'B\ud83d\ude00A');\nassert.equal(reverseStringCorrected('A\ud83d\ude00B'), 'B\ud83d\ude00A');\nassert.deepEqual(uniqueValuesCandidate([3, 1, 3, 2, 1]), [3, 1, 2]);\nassert.deepEqual(uniqueValuesCorrected([3, 1, 3, 2, 1]), [3, 1, 2]);\nconsole.log('JavaScript candidate/corrected behavior tests passed (6 assertions)');\n"
+      ],
+      "return_code": 0,
+      "passed": true,
+      "stdout": "JavaScript candidate/corrected behavior tests passed (6 assertions)",
+      "stderr": ""
+    },
+    {
+      "name": "C++ compile",
+      "command": [
+        "/usr/bin/g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "/mnt/data/ai-code-review-evaluation-lab/benchmarks/cpp_candidates.cpp",
+        "-o",
+        "/tmp/code-review-lab-n1gxhd1t/cpp_candidates"
+      ],
+      "return_code": 0,
+      "passed": true,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "C++ corrected binary-search smoke tests",
+      "command": [
+        "/tmp/code-review-lab-n1gxhd1t/cpp_candidates"
+      ],
+      "return_code": 0,
+      "passed": true,
+      "stdout": "C++ corrected binary-search smoke tests passed",
+      "stderr": ""
+    },
+    {
+      "name": "CLI validate",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "code_review_lab.cli",
+        "validate",
+        "examples/sample-evaluation.json"
+      ],
+      "return_code": 0,
+      "passed": true,
+      "stdout": "VALID: PY-001 \u2014 Palindrome Checker \u2014 Input Normalization\nWeighted score: 69.0/100\nDimension scores:\n  - Correctness: 60.0/100\n  - Edge Cases: 60.0/100\n  - Testing: 80.0/100\n  - Complexity: 80.0/100\n  - Code Quality: 80.0/100",
+      "stderr": ""
+    },
+    {
+      "name": "CLI score",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "code_review_lab.cli",
+        "score",
+        "examples/sample-evaluation.json"
+      ],
+      "return_code": 0,
+      "passed": true,
+      "stdout": "{\n  \"evaluation_id\": \"PY-001\",\n  \"title\": \"Palindrome Checker \\u2014 Input Normalization\",\n  \"score_out_of_100\": 69.0,\n  \"dimension_scores_out_of_100\": {\n    \"correctness\": 60.0,\n    \"edge_cases\": 60.0,\n    \"testing\": 80.0,\n    \"complexity\": 80.0,\n    \"code_quality\": 80.0\n  },\n  \"weights\": {\n    \"correctness\": 0.35,\n    \"edge_cases\": 0.2,\n    \"testing\": 0.2,\n    \"complexity\": 0.15,\n    \"code_quality\": 0.1\n  },\n  \"interpretation\": \"Structured reviewer aid only; read findings and test evidence before drawing conclusions.\"\n}",
+      "stderr": ""
+    },
+    {
+      "name": "CLI A/B compare",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "code_review_lab.cli",
+        "compare",
+        "examples/sample-evaluation.json",
+        "examples/sample-evaluation-b.json"
+      ],
+      "return_code": 0,
+      "passed": true,
+      "stdout": "{\n  \"task\": \"Return True when the input string is a palindrome after lowercasing and removing non-alphanumeric characters. Empty normalized strings are considered palindromes.\",\n  \"first\": {\n    \"evaluation_id\": \"PY-001\",\n    \"title\": \"Palindrome Checker \\u2014 Input Normalization\",\n    \"score_out_of_100\": 69.0\n  },\n  \"second\": {\n    \"evaluation_id\": \"PY-001-ALT\",\n    \"title\": \"Palindrome Checker \\u2014 Alternative Review Record\",\n    \"score_out_of_100\": 80.0\n  },\n  \"overall_delta_second_minus_first\": 11.0,\n  \"dimension_deltas_second_minus_first\": {\n    \"correctness\": 20.0,\n    \"edge_cases\": 20.0,\n    \"testing\": 0.0,\n    \"complexity\": 0.0,\n    \"code_quality\": 0.0\n  },\n  \"warning\": \"Score differences summarize reviewer ratings; they do not establish statistical significance or objective model superiority.\"\n}",
+      "stderr": ""
+    }
+  ]
+}

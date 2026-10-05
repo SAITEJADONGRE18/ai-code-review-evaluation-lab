@@ -1,0 +1,60 @@
+{
+  "evaluation_id": "PY-001",
+  "title": "Palindrome Checker \u2014 Input Normalization",
+  "language": "Python",
+  "metadata": {
+    "model": "illustrative-authored-example",
+    "model_version": "not applicable",
+    "prompt": "Write a function that checks whether a string is a palindrome, ignoring case and non-alphanumeric characters.",
+    "date": "2026-10-05",
+    "runtime": "Python 3.10+",
+    "provenance_note": "Illustrative record authored to demonstrate the schema; not a measured model output."
+  },
+  "task": "Return True when the input string is a palindrome after lowercasing and removing non-alphanumeric characters. Empty normalized strings are considered palindromes.",
+  "scores": {
+    "correctness": 3,
+    "edge_cases": 3,
+    "testing": 4,
+    "complexity": 4,
+    "code_quality": 4
+  },
+  "findings": [
+    {
+      "severity": "medium",
+      "title": "Punctuation-only inputs need an explicit policy",
+      "evidence": "The requirement defines empty normalized strings as palindromes, but this behavior should be represented by a dedicated regression test.",
+      "recommendation": "Add tests for an empty string and a string containing only punctuation, and document the chosen behavior."
+    }
+  ],
+  "tests": [
+    {
+      "name": "simple palindrome",
+      "input": "\"Level\"",
+      "expected": "True",
+      "observed": "True",
+      "status": "pass"
+    },
+    {
+      "name": "not a palindrome",
+      "input": "\"hello\"",
+      "expected": "False",
+      "observed": "False",
+      "status": "pass"
+    },
+    {
+      "name": "spaces and punctuation",
+      "input": "\"A man, a plan, a canal: Panama!\"",
+      "expected": "True",
+      "observed": "not recorded",
+      "status": "not_run"
+    },
+    {
+      "name": "punctuation only",
+      "input": "\"!!!\"",
+      "expected": "True",
+      "observed": "not recorded",
+      "status": "not_run"
+    }
+  ],
+  "summary": "This record demonstrates the evaluation format only. Its scores are illustrative and must not be interpreted as measured model performance."
+}

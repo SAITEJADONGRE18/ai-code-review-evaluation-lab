@@ -1,0 +1,2 @@
+[console_scripts]
+code-review-lab = code_review_lab.cli:main
